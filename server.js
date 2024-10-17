@@ -2,21 +2,23 @@ const express = require('express');
 const cors = require("cors");
 const mongoose = require('mongoose');
 const router = require('./Routes/routes');
-
+const dotenv = require('dotenv');
+dotenv.config();
 
 const app =express();
 app.use(express.json());
 app.use(
     cors(
         {  
-            origin:'http://localhost:3000',
+            //origin:'http://localhost:3000',
+            origin:'https://ticketbooking-moviesnow.netlify.app/',
             credentials:true,
         }
     )
 );
 
 try {
-     mongoose.connect("mongodb+srv://harishragavendarraja:x29FOW4w7YLyZ1Pq@sampledata.jus9cnn.mongodb.net/MovieTicketBooking?retryWrites=true&w=majority&appName=Sampledata").then(()=>{
+     mongoose.connect(process.env.MONGO_URL).then(()=>{
         console.log("Database Connected")
     })
 } catch (error) {
