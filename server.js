@@ -11,7 +11,7 @@ app.use(
     cors(
         {  
             //origin:'http://localhost:3000',
-            origin:'https://ticketbooking-moviesnow.netlify.app/',
+            origin:'https://ticketbooking-moviesnow.netlify.app',
             credentials:true,
         }
     )
