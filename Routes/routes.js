@@ -509,7 +509,7 @@ router.get('/feed',async(req,res)=>{
         .then(()=>{
              try {
                 const newData=new movies(
-                    { "name":"Leo",
+                    { "name":"Raayan",
                       "timings":[timing1._id,timing2._id,timing3._id]
                     })
                 newData.save().then(()=>{
